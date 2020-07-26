@@ -1,0 +1,11 @@
+{% extends 'blog/blog_base.html' %}
+{% block title %}
+    {{ block.super }} - List
+{% endblock %}
+{% block content %}
+    <h1 class="mb-5">Посты:</h1>
+    {% for post in post_list %}
+        {% include 'blog/includes/post_card_template.html' %}
+    {% endfor %}
+{% endblock %}
+

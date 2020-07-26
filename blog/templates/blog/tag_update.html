@@ -1,0 +1,19 @@
+{% extends 'blog/blog_base.html' %}
+{% block title %}
+    {{ block.super }} - Tag Update
+{% endblock %}
+{% block content %}
+    <form action="{{ tag.get_update_url }}" method="post">
+        {% csrf_token %}
+        {% for filed in form %}
+            {% if filed.errors %}
+                <div class="alert alert-danger mt-2">
+                    {{ filed.errors }}
+                </div>
+            {% endif %}
+            {{ filed.label }}
+            {{ filed }}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary mt-2">Сохранить</button>
+    </form>
+{% endblock %}

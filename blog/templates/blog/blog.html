@@ -3,7 +3,11 @@
     {{ block.super }} - List
 {% endblock %}
 {% block content %}
-    <h1 class="mb-5">Посты:</h1>
+    {% if request.GET.q  %}
+        <h1 class="mb-5">Страница поиска:</h1>
+    {% else %}
+        <h1 class="mb-5">Посты:</h1>
+    {% endif %}
     {% for post in post_list %}
         {% include 'blog/includes/post_card_template.html' %}
     {% endfor %}

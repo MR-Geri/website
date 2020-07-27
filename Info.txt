@@ -1,0 +1,2 @@
+Запуск сервера для django:
+    https://www.youtube.com/watch?v=FLiKTJqyyvs
